@@ -1,0 +1,46 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #4CAF50; /* رنگ دکمه */
+    color: white; /* رنگ متن */
+    padding: 16px; /* فاصله داخلی */
+    font-size: 16px; /* اندازه فونت */
+    border: none; /* حذف حاشیه */
+    cursor: pointer; /* تغییر ظاهر نشانگر موس */
+}
+
+.dropdown-content {
+    display: none; /* پنهان کردن منو */
+    position: absolute;
+    background-color: #f9f9f9; /* رنگ پس‌زمینه منو */
+    min-width: 160px; /* عرض منو */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* سایه */
+    z-index: 1; /* لایه منو */
+}
+
+.dropdown-content a {
+    color: black; /* رنگ متن لینک‌ها */
+    padding: 12px 16px; /* فاصله داخلی لینک‌ها */
+    text-decoration: none; /* حذف زیرخط لینک‌ها */
+    display: block; /* نمایش لینک‌ها به صورت بلوکی */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* تغییر رنگ در حالت hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* نمایش منو هنگام hover */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41; /* تغییر رنگ دکمه هنگام hover */
+}

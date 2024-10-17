@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50; /* رنگ دکمه */
+            color: white; /* رنگ متن */
+            padding: 16px; /* فاصله داخلی */
+            font-size: 16px; /* اندازه فونت */
+            border: none; /* حذف حاشیه */
+            cursor: pointer; /* تغییر ظاهر نشانگر موس */
+        }
+
+        .dropdown-content {
+            display: none; /* پنهان کردن منو */
+            position: absolute;
+            background-color: #f9f9f9; /* رنگ پس‌زمینه منو */
+            min-width: 160px; /* عرض منو */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* سایه */
+            z-index: 1; /* لایه منو */
+        }
+
+        .dropdown-content a {
+            color: black; /* رنگ متن لینک‌ها */
+            padding: 12px 16px; /* فاصله داخلی لینک‌ها */
+            text-decoration: none; /* حذف زیرخط لینک‌ها */
+            display: block; /* نمایش لینک‌ها به صورت بلوکی */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1; /* تغییر رنگ در حالت hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* نمایش منو هنگام hover */
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41; /* تغییر رنگ دکمه هنگام hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">انتخاب شهر</button>
+        <div class="dropdown-content">
+            <a href="#">تهران</a>
+            <a href="#">مشهد</a>
+            <a href="#">شیراز</a>
+            <a href="#">اصفهان</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownContent = document.querySelector('.dropdown-content');
+            const dropbtn = document.querySelector('.dropbtn');
+
+            dropbtn.addEventListener('click', () => {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // بستن منو هنگام کلیک خارج از آن
+            window.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target)) {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
